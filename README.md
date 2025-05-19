@@ -36,4 +36,4 @@ The method combines reinforcement learning (Dueling DQN) with a temporal graph e
 
 
 ## Usage
-To train STGS run python main.py
+To train STGS run `python main.py`
