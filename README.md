@@ -12,23 +12,26 @@ STGS is designed to:
 The method combines reinforcement learning (Dueling DQN) with a temporal graph encoder (GCN + GRU + attention).
 
 ## Structure
-
-- `models/`: Core architecture (Q-network, encoder, etc.)
-- `utils/`: Data loading, evaluation metrics, helper functions
-- `scripts/`: Training and evaluation scripts
-- `data/`: Sample configuration or preprocessed datasets (if included)
+- `main.py` – Entry point for training and evaluation.
+- `config.py` – Configuration for datasets, model parameters, and runtime settings.
+- `environment.py` – MDP environment for graph sparsification.
+- `models_DuelingDQN.py` – Q-network and encoder architecture.
+- `replay_buffer.py` – Experience replay buffer used by the RL agent.
+- `reward_manager.py` – Computes sparsification rewards (structure-based).
+- `reward_manager_pred.py` – Computes prediction-oriented rewards.
+- `utils.py` – Helper functions for logging, metrics, and data handling.
 
 ## Requirements
-
-- Python 3.8+
-- PyTorch >= 1.11
-- NetworkX
+- python 3.8+
+- pytorch 
+- torch-geometric
+- torch-geometric-temporal
+- gymnasium
+- networkX
 - scikit-learn
-- NumPy
-- tqdm
+- python-louvain
+- powerlaw
+- numpy
+- panads
 
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
 
