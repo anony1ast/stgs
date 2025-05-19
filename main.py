@@ -105,7 +105,9 @@ def train():
             next_q_values_tensor = torch.stack(next_q_values_list).to(device).float()
 
             target_q_values = rewards_eval + (1 - dones_eval) * config['gamma'] * next_q_values_tensor
-            loss_unreduced = F.mse_loss(q_values_tensor, target_q_values.detach(), reduction='none')
+            #loss_unreduced = F.mse_loss(q_values_tensor, target_q_values.detach(), reduction='none')
+            loss_unreduced = F.smooth_l1_loss(q_values_tensor, target_q_values.detach(), reduction='none')
+
             loss = (loss_unreduced * weights_tensor).mean()
             Loss.append(loss.item())
 
