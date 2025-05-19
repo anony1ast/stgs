@@ -22,7 +22,7 @@ The method combines reinforcement learning (Dueling DQN) with a temporal graph e
 - `utils.py` – Helper functions for logging, metrics, and data handling.
 
 ## Requirements
-- python 3.8+
+- python 3.9+
 - pytorch 
 - torch-geometric
 - torch-geometric-temporal
@@ -35,3 +35,5 @@ The method combines reinforcement learning (Dueling DQN) with a temporal graph e
 - panads
 
 
+## Usage
+To train STGS run python main.py
